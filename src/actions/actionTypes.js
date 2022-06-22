@@ -1,0 +1,1 @@
+export const LOAD_MESSAGES = 'LOAD_MESSAGES';
