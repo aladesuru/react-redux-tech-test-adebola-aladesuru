@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageNotFound should display Sorry page not found ! 1`] = `
+<div
+  className="pageNotfound"
+>
+  <p>
+     Sorry page not found ! 
+  </p>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    Go Home
+  </a>
+</div>
+`;
