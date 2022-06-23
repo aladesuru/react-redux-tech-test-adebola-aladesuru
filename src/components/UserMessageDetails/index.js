@@ -5,24 +5,25 @@ import Avatar from '../Avatar';
 import UserName from '../UserName';
 
 const UserMessageDetails = (props) => {
+  const { avatar, firstName, lastName, message, email, userId, date, showAvatar, showEmailAndName } = props;
   return (
     <li className="list-item">
       <div className="list-item-message">
-        {props.showAvatar ? (
+        {showAvatar ? (
           <div className="avatar">
-            <Avatar source={props.avatar} firstName={props.firstName} lastName={props.lastName} showName={false} />
+            <Avatar source={avatar} firstName={firstName} lastName={lastName} showName={false} />
           </div>
         ) : null}
-        <p className="message">{props.message}</p>
+        <p className="message">{message}</p>
       </div>
       <div className="publish-details">
-        {props.showEmailAndName ? (
+        {showEmailAndName ? (
           <div className="userName_email">
-            <p className="authors-email">{props.email}</p>
-            <UserName firstName={props.firstName} lastName={props.lastName} userId={props.userId} />
+            <p className="authors-email">{email}</p>
+            <UserName firstName={firstName} lastName={lastName} userId={userId} />
           </div>
         ) : null}
-        <p className="publish-date">{formatDate(props.date)}</p>
+        <p className="publish-date">{formatDate(date)}</p>
       </div>
     </li>
   );

@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/actionCreators';
 import UserMessageDetails from '../UserMessageDetails';
 
-const ListAllUsersMessages = (props) => {
+const ListAllUsersMessages = ({ messages, listMessage }) => {
   useEffect(() => {
-    if (props.messages.length === 0) {
-      props.listMessage().catch((err) => {
+    if (messages.length === 0) {
+      listMessage().catch((err) => {
         alert('Loading messages failed' + err);
       });
     }
@@ -17,7 +17,7 @@ const ListAllUsersMessages = (props) => {
     <>
       <h1 className="headline">List of Messages from Members</h1>
       <ul className="list-container">
-        {props.messages.map((content) => {
+        {messages.map((content) => {
           return (
             <UserMessageDetails
               key={content.id}

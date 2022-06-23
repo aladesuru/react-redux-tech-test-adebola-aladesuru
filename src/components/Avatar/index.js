@@ -1,13 +1,13 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 
-const Avatar = (props) => {
+const Avatar = ({ firstName, lastName, source, showName }) => {
   return (
     <>
-      <img src={props.source} alt="Avatar" />
-      {props.showName === true ? (
+      <img src={source} alt="Avatar" />
+      {showName === true ? (
         <span>
-          {props.firstName} {props.lastName}
+          {firstName} {lastName}
         </span>
       ) : null}
     </>
