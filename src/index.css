@@ -1,3 +1,10 @@
+/* ==== Base style ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 100%;
 }
@@ -10,3 +17,102 @@ body {
   font-size: 1rem;
   line-height: 1.5;
 }
+
+img {
+  margin-right: .2em;
+}
+
+/* ==== base layout style  ===== */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px;
+}
+.headline{
+  text-align: center;
+  color: #4d4a4a;
+}
+
+.list-container{
+  list-style: none;
+  justify-content: space-around;
+}
+
+.list-container,
+.list-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-item{
+  flex-direction: column;
+  border: 1px solid #eee;
+  padding: .5em;
+  margin: 20px;
+  flex: 1 200px;
+}
+.list-item-message{
+  margin-bottom: auto;
+}
+
+.publish-details{
+  text-align: right;
+  margin-top: 20px;
+}
+.publish-details a{
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #777;
+  font-weight: bold;
+  font-style: italic;
+  cursor: pointer;
+  padding-right: .2em;
+}
+
+.avatar {
+  float: left;
+  margin-right: .5em;
+  padding-right: .5em;
+}
+
+.authorsName{
+  color: #777;
+  font-weight: bold;
+  font-style: italic;
+  cursor: pointer;
+}
+.authors-email{
+  display: none;
+  color: #777;
+  font-size: .9em;
+}
+.list-item:hover .authors-email{
+  display: inline-block;
+}
+
+.view-all{
+  background-color: #4d4a4a;
+  color: #9c9a9a;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 10em;
+  text-align: center;
+  display: block;
+}
+
+/* ==== media query ===== */
+@media all and (min-width: 780px) {
+  .container{
+    width:70%;
+  }
+}
+
+/* ==== helper style ===== */
+
+
+
+
+
