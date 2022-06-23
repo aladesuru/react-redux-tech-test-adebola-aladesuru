@@ -103,10 +103,19 @@ img {
   display: block;
 }
 
+.pageNotfound{
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 20px 0;
+}
+
 /* ==== media query ===== */
 @media all and (min-width: 780px) {
   .container{
     width:70%;
+  }
+  .pageNotfound{
+    font-size: 25px;
   }
 }
 
