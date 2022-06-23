@@ -8,10 +8,12 @@ import UserMessageDetails from '../UserMessageDetails';
 
 const UserMessages = ({ messages, listMessage }) => {
   useEffect(() => {
-    listMessage().catch((err) => {
-      alert('Loading messages failed' + err);
-    });
-  }, []);
+    if (messages.length === 0) {
+      listMessage().catch((err) => {
+        alert('Loading messages failed' + err);
+      });
+    }
+  });
 
   return (
     <div>
