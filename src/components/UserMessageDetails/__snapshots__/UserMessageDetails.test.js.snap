@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserMessageDetails Component should  not display avatar, user name and email. when showAvatar, showEmailAndName props is set to false  1`] = `
+<li
+  className="list-item"
+>
+  <div
+    className="list-item-message"
+  >
+    <p
+      className="message"
+    >
+      In hac habitasse platea dictumst. Morbi vestibulum
+    </p>
+  </div>
+  <div
+    className="publish-details"
+  >
+    <p
+      className="publish-date"
+    >
+      23 June 2016 3:1
+    </p>
+  </div>
+</li>
+`;
+
+exports[`UserMessageDetails Component should display avatar, user name and email. when showAvatar, showEmailAndName props is set to true  1`] = `
+<li
+  className="list-item"
+>
+  <div
+    className="list-item-message"
+  >
+    <div
+      className="avatar"
+    >
+      <Avatar
+        firstName="Henry"
+        lastName="Harrison"
+        showName={false}
+        source="http://dummyimage.com/100x100.bmp/cc0000/ffffff"
+      />
+    </div>
+    <p
+      className="message"
+    >
+      In hac habitasse platea dictumst. Morbi vestibulum
+    </p>
+  </div>
+  <div
+    className="publish-details"
+  >
+    <div
+      className="userName_email"
+    >
+      <p
+        className="authors-email"
+      >
+        kharveyn@google.nl
+      </p>
+      <UserName
+        firstName="Henry"
+        lastName="Harrison"
+        userId="e837c9f5-247f-445f-bcc3-7d434348336b"
+      />
+    </div>
+    <p
+      className="publish-date"
+    >
+      23 June 2016 3:1
+    </p>
+  </div>
+</li>
+`;

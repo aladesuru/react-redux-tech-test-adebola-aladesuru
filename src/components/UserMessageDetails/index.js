@@ -17,12 +17,12 @@ const UserMessageDetails = (props) => {
       </div>
       <div className="publish-details">
         {props.showEmailAndName ? (
-          <>
+          <div className="userName_email">
             <p className="authors-email">{props.email}</p>
             <UserName firstName={props.firstName} lastName={props.lastName} userId={props.userId} />
-          </>
+          </div>
         ) : null}
-        <p>{formatDate(props.date)}</p>
+        <p className="publish-date">{formatDate(props.date)}</p>
       </div>
     </li>
   );

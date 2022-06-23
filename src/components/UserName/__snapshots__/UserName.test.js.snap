@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserName component should render user name as a link 1`] = `
+<Link
+  to="/userId/e837c9f5-247f-445f-bcc3-7d434348336b"
+>
+  Henry Harrison
+</Link>
+`;

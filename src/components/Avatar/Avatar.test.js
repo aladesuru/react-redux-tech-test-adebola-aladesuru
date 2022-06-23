@@ -19,14 +19,17 @@ describe('Avata componment', () => {
     const wrapper = renderAVatarComponent(true, renderer);
     expect(wrapper).toMatchSnapshot();
   });
+
   it('should display firstname and lastname when showName props is true', () => {
     const wrapper = renderAVatarComponent(false, renderer);
     expect(wrapper).toMatchSnapshot();
   });
+
   it('should contain one image', () => {
     const wrapper = renderAVatarComponent(false, shallow);
     expect(wrapper.find('img').length).toBe(1);
   });
+  
   it('should contain one image and name of the user', () => {
     const wrapper = renderAVatarComponent(true, shallow);
     expect(wrapper.find('img').length).toBe(1);
