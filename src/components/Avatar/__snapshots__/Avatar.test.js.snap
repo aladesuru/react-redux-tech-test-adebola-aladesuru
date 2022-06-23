@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avata componment should display firstname and lastname when showName props is true 1`] = `
+Array [
+  <img
+    alt="Avatar"
+    src="http://dummyimage.com/100x100.bmp/cc0000/ffffff"
+  />,
+  <span>
+    Henry
+     
+    Harrison
+  </span>,
+]
+`;
+
+exports[`Avata componment should display firstname and lastname when showName props is true 2`] = `
+<img
+  alt="Avatar"
+  src="http://dummyimage.com/100x100.bmp/cc0000/ffffff"
+/>
+`;
