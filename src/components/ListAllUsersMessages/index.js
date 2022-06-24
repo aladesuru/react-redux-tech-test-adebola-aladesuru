@@ -11,7 +11,7 @@ const ListAllUsersMessages = ({ messages, listMessage }) => {
         alert('Loading messages failed' + err);
       });
     }
-  });
+  }, []);
 
   return (
     <>

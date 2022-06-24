@@ -4,14 +4,14 @@ import renderer from 'react-test-renderer';
 import Avatar from './index';
 
 const renderAVatarComponent = (arg, renderType) => {
-  let defaultProps = {
+  let requiredProps = {
     source: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     firstName:'Henry',
     lastName: 'Harrison',
     showName: arg,
   };
-  const props = {...defaultProps, ...arg};
-  return renderType === renderer ? renderer.create(<Avatar {...defaultProps} />) : shallow(<Avatar {...defaultProps} />);
+  const props = { ...requiredProps };
+  return renderType === renderer ? renderer.create(<Avatar {...requiredProps} />) : shallow(<Avatar {...requiredProps} />);
 };
 
 describe('Avata componment', () => {
@@ -29,7 +29,7 @@ describe('Avata componment', () => {
     const wrapper = renderAVatarComponent(false, shallow);
     expect(wrapper.find('img').length).toBe(1);
   });
-  
+
   it('should contain one image and name of the user', () => {
     const wrapper = renderAVatarComponent(true, shallow);
     expect(wrapper.find('img').length).toBe(1);
