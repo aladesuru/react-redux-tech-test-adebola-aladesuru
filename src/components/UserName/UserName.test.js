@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import UserName from './index';
 
 const renderUserNameComponent = (renderType) => {
-  let requiredProps = {
+  const requiredProps = {
     firstName: 'Henry',
     lastName: 'Harrison',
     userId: 'e837c9f5-247f-445f-bcc3-7d434348336b',

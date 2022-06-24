@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import UserMessageDetails from './index';
 
 const renderUserMessageDetailsComponent = (showAvatar, showEmailAndName, renderType) => {
-  let requiredProps = {
+  const requiredProps = {
     avatar: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     firstName: 'Henry',
     lastName: 'Harrison',

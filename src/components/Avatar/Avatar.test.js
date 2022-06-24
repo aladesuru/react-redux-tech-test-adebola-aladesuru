@@ -4,14 +4,15 @@ import renderer from 'react-test-renderer';
 import Avatar from './index';
 
 const renderAVatarComponent = (arg, renderType) => {
-  let requiredProps = {
+  const requiredProps = {
     source: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
-    firstName:'Henry',
+    firstName: 'Henry',
     lastName: 'Harrison',
     showName: arg,
   };
-  const props = { ...requiredProps };
-  return renderType === renderer ? renderer.create(<Avatar {...requiredProps} />) : shallow(<Avatar {...requiredProps} />);
+  return renderType === renderer
+    ? renderer.create(<Avatar {...requiredProps} />)
+    : shallow(<Avatar {...requiredProps} />);
 };
 
 describe('Avata componment', () => {
