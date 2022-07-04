@@ -1,6 +1,3 @@
-# NOW TV React Interview
-
-![NowTV](./logo.png)
 
 A React and Redux project to retrieve, render and manipulate data returned from an API.
 
