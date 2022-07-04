@@ -1,36 +1,36 @@
 import * as action from './actionTypes';
 import * as messageApi from '../data';
 
-async function callMember() {
-  try{
-    const members = await messageApi.getMembers();
-    // Convert array of users to object, the key is the user id
-    const transformMemberToObj= members.reduce((a, user) => ({...a, [user.id]: user}), {});
-    return transformMemberToObj;
-  }catch(error){
+async function getData(data){
+  try {
+    return await data;
+  } catch (error) {
     throw error;
   }
+
+}
+
+async function converMembersDataToObj() {
+  // Convert array of users to object, the key is the user id
+  const members = await getData(messageApi.getMembers());
+  const transformMemberToObj= members.reduce((a, user) => ({...a, [user.id]: user}), {});
+  return transformMemberToObj;
 }
 
 async function transformMemberMessages(messages) {
-  try {
-      // Add user's information to messages
-      const members = await callMember();
-      const userMessages = messages.map((message) => {
-      const {id, ip, avatar: userPic , ...userInfo} = members[message.userId];
-      const { timestamp, ...messageInfo } = message;
-      return {
-                  ...messageInfo,
-                  avatar : userPic ? userPic : "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
-                  date : timestamp,
-                  ...userInfo
+  // Add user's information to messages
+  const members = await converMembersDataToObj();
+  const userMessages = messages.map((message) => {
+  const {id, ip, avatar: userPic , ...userInfo} = members[message.userId];
+  const { timestamp, ...messageInfo } = message;
+  return {
+          ...messageInfo,
+          avatar : userPic ? userPic : "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
+          date : timestamp,
+          ...userInfo
       }
-    })
-      return userMessages.sort((a, b) => (a.date > b.date && 1) || -1);
-  } catch (error) {
-      throw error;
-
-  }
+})
+  return userMessages.sort((a, b) => (a.date > b.date && 1) || -1);
 }
 
 export function dataAfterTransformation(messages) {
@@ -39,12 +39,8 @@ export function dataAfterTransformation(messages) {
 
 export function LoadMessages() {
   return async function (dispatch) {
-    try {
-      const  getMemberMessages = await messageApi.getMessages();
+      const  getMemberMessages = await getData(messageApi.getMessages());
       const transformedData = await transformMemberMessages(getMemberMessages);
       dispatch(dataAfterTransformation(transformedData));
-    } catch (error) {
-      throw error;
-    }
   };
 }
