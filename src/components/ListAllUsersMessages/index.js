@@ -8,7 +8,7 @@ const ListAllUsersMessages = ({ messages, listMessage }) => {
   useEffect(() => {
     if (messages.length === 0) {
       listMessage().catch((err) => {
-        alert('Loading messages failed' + err);
+        alert('Loading messages failed === ' + err);
       });
     }
   }, []);
